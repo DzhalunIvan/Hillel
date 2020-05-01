@@ -11,7 +11,7 @@ public class Calculator {
         double diff = x1-x2;
         double mult = x1*x2;
         double div = x1/x2;
-        System.out.printf("Your \n Sum is %.3f\n Difference %.3f\n Multiplication %.3f\n Division %.3f",sum, diff, mult, div);
+        System.out.printf("Your input is %.3f and %.3f \n Sum is %.3f\n Difference %.3f\n Multiplication %.3f\n Division %.3f",x1,x2,sum, diff, mult, div);
 
     }
 }

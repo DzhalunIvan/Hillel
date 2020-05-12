@@ -9,7 +9,7 @@ public class Deposit {
             scanner.next();
         }
         double depositMoney = scanner.nextDouble();
-        System.out.println("Enter the deposit term:");
+        System.out.println("Enter the deposit term (years):");
         if (!scanner.hasNextInt()){
             System.out.println("Wrong input! Please, try again.");
             scanner.next();

@@ -15,6 +15,13 @@ public class Student implements Comparable<Student> {
         this.marks = marks;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
     public int[] getMarks() {
         return marks;
     }

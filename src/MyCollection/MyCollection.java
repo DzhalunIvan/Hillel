@@ -42,7 +42,7 @@ public class MyCollection {
     public void add(Object object) {
        Object[]temp;
         if (size ==objects.length){
-        temp = new Object[objects.length*2];}
+        temp = new Object[objects.length*2+1];}
         else{
             temp = new Object[objects.length];
         }

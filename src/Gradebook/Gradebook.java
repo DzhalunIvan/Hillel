@@ -29,6 +29,8 @@ public class Gradebook {
         group.groupContains("Zidane");
         group.clear();
         group.printGroupMarks();
+        System.out.println(student.toString());
+
     }
 }
 

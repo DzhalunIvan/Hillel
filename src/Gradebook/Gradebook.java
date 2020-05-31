@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Gradebook {
     public static void main(String[] args) {
         Student student = new Student("Rivaldo");
-        Student student1 = new Student("Zidane");
+        Student student1 = new Student("Rivaldo");
         Student student2 = new Student("Baggio");
         Student student3 = new Student("Ronaldo");
         Student student4 = new Student("Nedved");
@@ -29,7 +29,8 @@ public class Gradebook {
         group.groupContains("Zidane");
         group.clear();
         group.printGroupMarks();
-        System.out.println(student.toString());
+        System.out.println(student);
+        System.out.println(student.equals(student2));
 
     }
 }

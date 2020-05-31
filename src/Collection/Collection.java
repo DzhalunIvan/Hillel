@@ -1,7 +1,7 @@
 package Collection;
 
-import org.jetbrains.annotations.NotNull;
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class Collection implements java.util.Collection {
@@ -12,6 +12,11 @@ public class Collection implements java.util.Collection {
     public Collection(Object... objects) {
         this.objects = objects;
         this.size = objects.length;
+    }
+
+    @Override
+    public String toString() {
+        return "objects=" + Arrays.toString(objects);
     }
 
     public Object[] getObjects() {
@@ -46,7 +51,6 @@ public class Collection implements java.util.Collection {
     }
 
 
-    @NotNull
     @Override
     public Object[] toArray() {
         return this.getObjects();
@@ -91,7 +95,7 @@ public class Collection implements java.util.Collection {
     }
 
     @Override
-    public boolean addAll(@NotNull java.util.Collection c) {
+    public boolean addAll(java.util.Collection c) {
         Object[] temp = c.toArray();
         for (Object o : temp) {
             if (o == null) {
@@ -109,52 +113,54 @@ public class Collection implements java.util.Collection {
     }
 
     @Override
-    public boolean retainAll(@NotNull java.util.Collection c) {
-        Object[]temp = new Object[objects.length];
-        int counter=0;
-        for (int i = 0; i <size; i++) {
+    public boolean retainAll(java.util.Collection c) {
+        Object[] temp = new Object[objects.length];
+        int counter = 0;
+        for (int i = 0; i < size; i++) {
             for (int j = 0; j < c.toArray().length; j++) {
-                if (objects[i]==(null)||c.toArray()[j]==null){
+                if (objects[i] == (null) || c.toArray()[j] == null) {
                     continue;
                 }
-                if (objects[i].equals(c.toArray()[j])){
-                    temp[counter]=objects[i];
+                if (objects[i].equals(c.toArray()[j])) {
+                    temp[counter] = objects[i];
                     counter++;
                 }
             }
 
         }
-        objects=temp;
-        size =counter;
+        objects = temp;
+        size = counter;
         return true;
     }
 
     @Override
-    public boolean removeAll(@NotNull java.util.Collection c) {
-        for (Object o:c.toArray()) {
+    public boolean removeAll(java.util.Collection c) {
+        for (Object o : c.toArray()) {
+            if (o==null)
+                continue;
             remove(o);
         }
         return false;
     }
 
     @Override
-    public boolean containsAll(@NotNull java.util.Collection c) {
+    public boolean containsAll(java.util.Collection c) {
         int counter = 0;
-        for (Object el:c.toArray()) {
-            if (this.contains(el)){
+        for (Object el : c.toArray()) {
+            if (this.contains(el)) {
                 counter++;
             }
         }
-        return counter == c.toArray().length;
+        return counter == c.size();
     }
 
-    @NotNull
+
     @Override
-    public Object[] toArray(@NotNull Object[] a) {
+    public Object[] toArray(Object[] a) {
         return new Object[0];
     }
 
-    @NotNull
+
     @Override
     public Iterator iterator() {
         return null;

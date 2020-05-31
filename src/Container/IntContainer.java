@@ -1,6 +1,6 @@
 package Container;
 
-import org.jetbrains.annotations.NotNull;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -72,7 +72,7 @@ public class IntContainer {
         return size;
     }
 
-    void addFromContainer(@NotNull IntContainer srcContainer) {
+    void addFromContainer(IntContainer srcContainer) {
         int[] temp = new int[container.length + srcContainer.getSize()];
         int k = 0;
         for (int i = 0; i < temp.length; i++) {
